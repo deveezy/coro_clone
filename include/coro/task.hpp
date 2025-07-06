@@ -226,13 +226,9 @@ public:
     return awaitable {coroutine_};
   }
   //
-  // auto promise() & -> promise_type & { return coroutine_.promise(); }
-  // auto promise() const & -> const promise_type & { return coroutine_.promise(); }
-  // auto promise() && -> promise_type && { return std::move(coroutine_.promise()); }
-  template <typename Self>
-  auto promise(this Self &&self) -> decltype(auto) {
-    return std::move(std::forward<Self>(self).coroutine_.promise());
-  }
+  auto promise() & -> promise_type & { return coroutine_.promise(); }
+  auto promise() const & -> const promise_type & { return coroutine_.promise(); }
+  auto promise() && -> promise_type && { return std::move(coroutine_.promise()); }
 
   auto handle() -> coroutine_handle { return coroutine_; }
 

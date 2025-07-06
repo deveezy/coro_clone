@@ -8,7 +8,7 @@
 #include <coro/task.hpp>
 
 #define RANGE_OF_IMPL_INL_H
-#include <concepts/range_of.hpp>
+#include <coro/concepts/range_of.hpp>
 #include <atomic>
 #include <condition_variable>
 #include <mutex>

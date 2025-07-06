@@ -36,7 +36,7 @@ add_library(
   ${LIB_NAME} ${INCLUDE_DIR}/coro/concepts/range_of.hpp
               ${INCLUDE_DIR}/coro/thread_pool.hpp ${SRC_DIR}/thread_pool.cpp)
 
-target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR}/coro)
+target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
 add_executable(libcoro_exec src/main.cpp)
 target_include_directories(libcoro_exec PRIVATE ${INCLUDE_DIR})
 target_link_libraries(libcoro_exec ${LIB_NAME})
